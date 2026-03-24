@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Atacadão Farma Centro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reset */
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      margin: 0; 
+      background: #f8f9fa; 
+      color: #333; 
+      line-height: 1.6; 
+    }
+
+    /* Header com gradiente */
+    header { 
+      background: linear-gradient(135deg, #008080, #20B2AA); 
+      color: white; 
+      text-align: center; 
+      padding: 30px 20px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    }
+    .header-content h1 { 
+      margin: 0; 
+      font-size: 2.5em; 
+    }
+    .header-content p { 
+      margin: 10px 0; 
+      font-style: italic; 
+    }
+    nav { 
+      margin-top: 15px; 
+    }
+    nav a { 
+      color: white; 
+      text-decoration: none; 
+      margin: 0 20px; 
+      font-weight: bold; 
+      transition: color 0.3s, transform 0.2s; 
+    }
+    nav a:hover { 
+      color: #00BFFF; 
+      transform: scale(1.1); 
+    }
+    nav i { margin-right: 5px; }
+
+    /* Main */
+    .container { 
+      max-width: 900px; 
+      margin: 30px auto; 
+      padding: 0 20px; 
+    }
+    h2, h3 { 
+      color: #008080; 
+    }
+    a { 
+      color: #00BFFF; 
+    }
+    img { 
+      max-width: 100%; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    }
+
+    /* Post Cards */
+    .post-list { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 20px; 
+    }
+    .post-card { 
+      background: white; 
+      padding: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+      border: 1px solid #e0e0e0; 
+      transition: transform 0.3s, box-shadow 0.3s; 
+    }
+    .post-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1); 
+    }
+    .post-date { 
+      font-size: 0.9em; 
+      color: #777; 
+    }
+    .read-more { 
+      display: inline-block; 
+      background: #00BFFF; 
+      color: white; 
+      padding: 8px 15px; 
+      border-radius: 5px; 
+      text-decoration: none; 
+    }
+
+    /* CTA Section */
+    .cta { 
+      text-align: center; 
+      margin: 40px 0; 
+      background: #e0f7fa; 
+      padding: 20px; 
+      border-radius: 10px; 
+    }
+    .btn { 
+      background: #008080; 
+      color: white; 
+      padding: 10px 20px; 
+      border-radius: 5px; 
+      text-decoration: none; 
+      font-weight: bold; 
+    }
+    .btn:hover { 
+      background: #006666; 
+    }
+
+    /* Footer */
+    footer { 
+      background: #eee; 
+      text-align: center; 
+      padding: 15px; 
+      font-size: 0.9em; 
+      border-top: 1px solid #ddd; 
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) { 
+      header { padding: 20px; } 
+      nav a { display: block; margin: 10px 0; } 
+      .post-list { grid-template-columns: 1fr; } 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Blog Atacadão Farma Centro</h1>
+      <p>Dicas de saúde e bem-estar para você!</p>
+    </div>
+    <nav>
+      <a href="https://atacadaofarmacentro.github.io/atacadaofarmacentro/"><i class="fas fa-home"></i> Site Principal</a>
+      <a href="https://wa.me/556196592066?text=Olá!%20Vi%20no%20blog%20e%20quero%20mais%20dicas." target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.instagram.com/farmacentro061/?igsh=MTZzNHo2cnZoNXBuZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <img src="images/logo.png" alt="Logo Atacadão Farma Centro"> <!-- Substitua por logo real -->
+    <p>Olá, clientes queridos! Aqui compartilhamos <strong>dicas de saúde práticas e confiáveis</strong> para melhorar seu dia a dia. Lembre-se: não substitui consulta médica.</p>
+
+    <div class="post-list">
+      <!-- Post 1: Vitaminas -->
+      <div class="post-card">
+        <h3>Dica de Saúde: Os Benefícios das Vitaminas para o Seu Dia a Dia</h3>
+        <p class="post-date">09/08/2025</p>
+        <p>Descubra como as vitaminas podem turbinar sua energia e imunidade!</p>
+        <a href="#vitaminas" class="read-more">Leia mais →</a>
+      </div>
+      <!-- Post 2: Hidratação -->
+      <div class="post-card">
+        <h3>Dica de Saúde: A Importância da Hidratação no Verão</h3>
+        <p class="post-date">10/08/2025</p>
+        <p>Aprenda a se manter hidratado e evite problemas comuns!</p>
+        <a href="#hidratacao" class="read-more">Leia mais →</a>
+      </div>
+      <!-- Post 3: Exercícios -->
+      <div class="post-card">
+        <h3>Dica de Saúde: Exercícios Simples para Manter a Forma em Casa</h3>
+        <p class="post-date">11/08/2025</p>
+        <p>Comece hoje com rotinas fáceis e eficazes!</p>
+        <a href="#exercicios" class="read-more">Leia mais →</a>
+      </div>
+      <!-- Post 4: Água -->
+      <div class="post-card">
+        <h3>Dica de Saúde: Por que Beber Água é Essencial para Sua Saúde</h3>
+        <p class="post-date">12/08/2025</p>
+        <p>Saiba como a água mantém seu corpo funcionando perfeitamente!</p>
+        <a href="#agua" class="read-more">Leia mais →</a>
+      </div>
+    </div>
+
+    <!-- Seções completas dos posts -->
+    <section id="vitaminas">
+      <h2>Dica de Saúde: Os Benefícios das Vitaminas para o Seu Dia a Dia</h2>
+      <img src="images/vitamina-c.jpg" alt="Vitamina C"> <!-- Adicione imagem real -->
+      <p>Olá, amigos do Atacadão Farma Centro! Manter o corpo em equilíbrio é chave pra uma vida saudável. Vamos falar de vitaminas?</p>
+      <ul>
+        <li><strong>Vitamina C</strong>: Fortalece o sistema imunológico e ajuda na absorção de ferro. Encontre em frutas cítricas como laranja e limão.</li>
+        <li><strong>Vitamina D</strong>: Essencial pros ossos e pro bom humor. Exposição ao sol é uma ótima fonte natural.</li>
+      </ul>
+      <p><em>(Fonte: Orientação geral do Ministério da Saúde. Consulte um médico para orientações personalizadas.)</em></p>
+    </section>
+
+    <section id="hidratacao">
+      <h2>Dica de Saúde: A Importância da Hidratação no Verão</h2>
+      <img src="images/agua.jpg" alt="Hidratação"> <!-- Adicione imagem real -->
+      <p>E aí, galera? Com o calor chegando, hidratação é tudo! Beba pelo menos 2 litros de água por dia.</p>
+      <ul>
+        <li>Benefícios: Melhora a pele, energia e digestão.</li>
+        <li>Dica: Adicione limão pra dar um sabor especial.</li>
+      </ul>
+      <p><em>(Lembrete: Consulte profissionais para orientações personalizadas.)</em></p>
+    </section>
+
+    <section id="exercicios">
+      <h2>Dica de Saúde: Exercícios Simples para Manter a Forma em Casa</h2>
+      <img src="images/exercicios.jpg" alt="Exercícios"> <!-- Adicione imagem real -->
+      <p>Bom dia, equipe! Movimentar o corpo faz milagres. Experimente:</p>
+      <ul>
+        <li>Caminhada de 30 min: Queima calorias e alivia stress.</li>
+        <li>Alongamentos: Melhora flexibilidade e relaxa os músculos.</li>
+      </ul>
+      <p><em>(Baseado em recomendações gerais. Consulte um médico antes de iniciar.)</em></p>
+    </section>
+
+    <section id="agua">
+      <h2>Dica de Saúde: Por que Beber Água é Essencial para Sua Saúde</h2>
+      <img src="images/agua-fresca.jpg" alt="Água Fresca"> <!-- Adicione imagem real -->
+      <p>Olá, clientes do Atacadão Farma Centro! Você sabia que cerca de 60% do seu corpo é água? Ela é essencial pra regular a temperatura, ajudar na digestão e na saúde da pele.</p>
+      <ul>
+        <li><strong>Benefícios de beber água</strong>:
+          <ul>
+            <li>Mantém a energia: Desidratação causa cansaço e falta de foco.</li>
+            <li>Melhora a pele: Hidratação deixa a pele mais viçosa.</li>
+            <li>Apoia os rins: Ajuda a eliminar toxinas.</li>
+          </ul>
+        </li>
+        <li><strong>Dica prática</strong>: Tente beber 2-3 litros por dia, dependendo do seu peso e atividade física.</li>
+      </ul>
+      <p><em>(Fonte: Baseado em recomendações do Ministério da Saúde. Consulte um médico para orientações personalizadas.)</em></p>
+    </section>
+
+    <section class="cta">
+      <h2>Precisa de ajuda? Ligue pra gente: +55 61 9659-2066</h2>
+      <a href="https://wa.me/556196592066" class="btn">Fale no WhatsApp</a>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Atacadão Farma Centro. Cuide da sua saúde com a gente! | Tel: +55 61 9659-2066 | <a href="https://atacadaofarmacentro.github.io/atacadaofarmacentro/">Voltar ao Site</a></p>
+  </footer>
+</body>
+</html>
