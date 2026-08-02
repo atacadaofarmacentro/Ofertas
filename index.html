@@ -5,141 +5,534 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atacadão Farma Centro - Ofertas Imperdíveis</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #007bff, #00c851); color: white; text-align: center; padding: 40px 20px; }
-        h1 { margin: 0; font-size: 2.4em; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
-        .categoria { margin: 35px 0 20px; }
-        .categoria h2 { background: #007bff; color: white; padding: 15px; border-radius: 10px; margin-bottom: 15px; font-size: 1.6em; }
-        .produto { background: white; border: 1px solid #ddd; border-radius: 12px; padding: 15px 18px; margin: 12px 0; box-shadow: 0 3px 10px rgba(0,0,0,0.08); font-size: 1.1em; }
-        .preco { font-size: 1.55em; font-weight: bold; color: #e74c3c; }
-        .destaque { background: #fff3cd; border-left: 6px solid #ffc107; font-weight: bold; }
-        .whatsapp { background: #25D366; color: white; padding: 18px; text-align: center; font-size: 1.4em; font-weight: bold; border-radius: 50px; margin: 20px auto; max-width: 320px; display: block; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .blog { background: #007bff; color: white; padding: 18px; text-align: center; font-size: 1.3em; font-weight: bold; border-radius: 50px; margin: 10px auto; display: block; text-decoration: none; }
-        footer { text-align: center; padding: 25px; background: #222; color: white; margin-top: 50px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+        }
+        header {
+            background: #002b5c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 5px solid #ff6d00;
+        }
+        .logo-placeholder {
+            background: white;
+            color: #002b5c;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: 900;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 3px solid #ff6d00;
+        }
+        header p {
+            color: #ffb74d;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+        .banner-queima {
+            background: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .banner-maes {
+            background: #e91e63;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .categoria {
+            margin-top: 40px;
+        }
+        .categoria h2 {
+            color: #002b5c;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff6d00;
+            padding-left: 10px;
+            font-size: 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 4px solid #ff6d00;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .destaque-fogo {
+            background: #ffeb3b;
+            color: #d32f2f;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+        .produto {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .preco {
+            color: #002b5c;
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        .btn-zap {
+            display: block;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .btn-zap:hover {
+            background: #1ebd57;
+        }
+        .links-uteis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .btn-link {
+            background: #002b5c;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            border-bottom: 4px solid #001733;
+            transition: 0.2s;
+        }
+        .btn-link:hover {
+            background: #ff6d00;
+            border-bottom: 4px solid #cc5700;
+        }
+        footer {
+            background: #002b5c;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 5px solid #ff6d00;
+        }
+        footer p {
+            margin-top: 10px;
+            color: #ffb74d;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>🔥 ATACADÃO FARMA CENTRO 🔥</h1>
-        <p>OFERTAS IMPERDÍVEIS • Aproveite enquanto durar o estoque!</p>
+        <div class="logo-placeholder">ATACADÃO FARMA CENTRO</div>
+        <h1>🔥 OFERTAS IMPERDÍVEIS 🔥</h1>
+        <p>⏰ Aproveite enquanto durar o estoque!</p>
     </header>
-    <div class="container">
 
-        <!-- Promoções novas (do HTML que você mandou) -->
-        <h2 class="categoria">💊 MEDICAMENTOS</h2>
-        <div class="produto">Hystin – <span class="preco">R$ 4,99</span></div>
-        <div class="produto">Nimesulida – <span class="preco">R$ 9,99</span></div>
-        <div class="produto destaque">Fenaflan Gel – <span class="preco">R$ 17,99</span></div>
-        <div class="produto">Loratadina – <span class="preco">R$ 6,99</span></div>
-        <div class="produto">Dipirona 1g – <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Dipirona Gotas – <span class="preco">R$ 4,99</span></div>
-        <div class="produto">Ivermectina – <span class="preco">R$ 8,99</span></div>
-        <div class="produto">Losartana – <span class="preco">4 caixas R$ 19,99</span></div>
-        <div class="produto">Tadalafila – <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Simeticona – <span class="preco">R$ 7,99</span></div>
-        <div class="produto">Doralgina – <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Endcof – <span class="preco">R$ 17,99</span></div>
-        <div class="produto destaque">Soro Reidratação – <span class="preco">R$ 15,99</span></div>
-        <div class="produto destaque">Benfotiamina – <span class="preco">R$ 29,99</span></div>
-        <div class="produto destaque">Carvedilol – <span class="preco">R$ 24,99</span></div>
-        <div class="produto destaque">Aciclovir – <span class="preco">R$ 19,99</span></div>
-        <div class="produto destaque">Captopril – <span class="preco">R$ 4,99</span></div>
-        <div class="produto destaque">KIT XÔ GRIPE – <span class="preco">R$ 24,99</span></div>
-
-        <h2 class="categoria">🍊 VITAMINAS</h2>
-        <div class="produto">Vitamina C – <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Vitamina B12 – <span class="preco">R$ 39,99</span></div>
-        <div class="produto">Xarope Vitamina C – <span class="preco">R$ 14,99</span></div>
-        <div class="produto">Vitamina C + Zinco – <span class="preco">R$ 29,99</span></div>
-        <div class="produto">CentroPlus – <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Fort Gerin A-Z – <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Fort Gerin Beleza – <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Cártamo – <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Circulatório – <span class="preco">R$ 19,99</span></div>
-        <div class="produto destaque">Magnésio Treonato – <span class="preco">R$ 29,99</span></div>
-
-        <h2 class="categoria">🌿 NATURAIS</h2>
-        <div class="produto">Óleo Açafrão – <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Castanha Índia – <span class="preco">R$ 39,99</span></div>
-        <div class="produto">Vinagre Maçã – <span class="preco">R$ 31,99</span></div>
-        <div class="produto">Canela de Velho – <span class="preco">R$ 14,99</span></div>
-        <div class="produto">Florais – <span class="preco">R$ 19,90</span></div>
-        <div class="produto">Gel Massageador – <span class="preco">R$ 19,99</span></div>
-
-        <h2 class="categoria">👶 INFANTIL</h2>
-        <div class="produto">Multivitamínico Kids – <span class="preco">R$ 29,99</span></div>
-        <div class="produto">Leite Ninho – <span class="preco">R$ 23,99</span></div>
-        <div class="produto">Cotonete – <span class="preco">R$ 3,49</span></div>
-        <div class="produto">Lenço – <span class="preco">R$ 9,99</span></div>
-        <div class="produto destaque">Bebê Limpinho – <span class="preco">R$ 10,99</span></div>
-        <div class="produto destaque">Band-Aid – <span class="preco">R$ 6,99</span></div>
-
-        <h2 class="categoria">🤰 PESSOAIS</h2>
-        <div class="produto">Teste Gravidez – <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Pílula Seguinte – <span class="preco">R$ 14,99</span></div>
-        <div class="produto">Lubrificante – <span class="preco">R$ 11,99</span></div>
-
-        <h2 class="categoria">🧴 HIGIENE</h2>
-        <div class="produto">Antisséptico – <span class="preco">R$ 12,99</span></div>
-        <div class="produto destaque">Spray – <span class="preco">R$ 34,99</span></div>
-        <div class="produto destaque">Colgate – <span class="preco">R$ 19,99</span></div>
-        <div class="produto destaque">Listerine – <span class="preco">R$ 24,99</span></div>
-        <div class="produto destaque">Carmed – <span class="preco">R$ 14,99</span></div>
-        <div class="produto destaque">Renu – <span class="preco">R$ 49,99</span></div>
-        <div class="produto">Colírio – <span class="preco">R$ 9,99</span></div>
-        <div class="produto destaque">Colírio Plus – <span class="preco">R$ 14,99</span></div>
-        <div class="produto">Skala – <span class="preco">R$ 9,99</span></div>
-        <div class="produto destaque">Ceras – <span class="preco">R$ 14,99</span></div>
-        <div class="produto destaque">Prestobarba – <span class="preco">R$ 2,99</span></div>
-
-        <h2 class="categoria">💊 XAROPES</h2>
-        <div class="produto destaque">Guaco – <span class="preco">R$ 19,99</span></div>
-        <div class="produto destaque">Ambroxol – <span class="preco">R$ 19,99</span></div>
-
-        <h2 class="categoria">🧪 TESTES</h2>
-        <div class="produto destaque">COVID – <span class="preco">R$ 29,99</span></div>
-
-        <h2 class="categoria">🚨 QUEIMA DE ESTOQUE</h2>
-        <div class="produto destaque">Até 30% OFF<br>Produtos com validade próxima</div>
-
-        <h2 class="categoria">🎁 DIA DAS MÃES</h2>
-        <div class="produto">Compras acima de R$ 30 concorrem a um kit</div>
-
-        <!-- Promoções antigas que você mandou primeiro -->
-        <h2 class="categoria">💊 VITAMINAS E SUPLEMENTOS</h2>
-        <div class="produto">Óleo de Alho 60 cápsulas — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Coenzima Q10 60 cápsulas — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">CentroPluz Vitamina C 30 comprimidos — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Óleo de Linhaça For Health 60 cápsulas — <span class="preco">R$ 24,99</span></div>
-        <div class="produto">Condrilex (Condroitina + Colágeno + MSM) 90 comprimidos — <span class="preco">R$ 29,99</span></div>
-        <div class="produto">Axis Cabelo e Barba 30 comprimidos — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">AdForte 1 ampola 3ml — <span class="preco">R$ 26,99</span></div>
-        <div class="produto">Tezus Decus — <span class="preco">R$ 69,99</span></div>
-
-        <h2 class="categoria">🧴 CABELO E BELEZA</h2>
-        <div class="produto">Head & Shoulders Shampoo 200ml — <span class="preco">R$ 14,99</span></div>
-        <div class="produto">Condicionador Seda Hialurônico — <span class="preco">R$ 9,99</span></div>
-        <div class="produto">Baba Gloss Shampoo Nostalgia — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Condicionador Salon Line Bomba 500ml — <span class="preco">R$ 19,99</span></div>
-
-        <h2 class="categoria">🧴 CUIDADOS COM A PELE</h2>
-        <div class="produto">Calamed Pós-Sol 100ml — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">Ricol Pós-Sol — <span class="preco">R$ 29,99</span></div>
-
-        <h2 class="categoria">🥛 ALIMENTAÇÃO / NUTRIÇÃO</h2>
-        <div class="produto">Leite Ninho Integral — <span class="preco">R$ 19,99</span></div>
-        <div class="produto">SupraVit Nutri 400g — <span class="preco">R$ 59,99</span></div>
-
-        <h2 class="categoria">🩺 EQUIPAMENTOS DE SAÚDE</h2>
-        <div class="produto">Aparelho de Pressão de Pulso — <span class="preco">R$ 99,99</span></div>
-
-        <a href="https://whatsapp.com/channel/0029VbCNcI32f3EG9LzfoK3d" class="whatsapp">📲 WHATSAPP</a>
-        <a href="https://atacadaofarmacentro.github.io/Blog_AtacadaoFarmaCentro/#cannabis-opioides" class="blog">🌐 ACESSAR BLOG</a>
+    <div class="banner-queima">
+        🚨 SUPER QUEIMA DE ESTOQUE - ATÉ 30% DE DESCONTO 🚨<br>
+        <span style="font-size: 0.9rem; font-weight: normal;">⚠️ Produtos com validade próxima: Cremes • Condicionadores • Fraldas • Perfumaria • Medicamentos</span>
     </div>
+    
+    <div class="banner-maes">
+        🎁 PROMOÇÃO DIA DAS MÃES 💖<br>
+        <span style="font-size: 0.95rem;">🛍️ Compras acima de R$ 30 participam | Concorra a um Kit Dermacreem (Sorteio no Dia das Mães)</span>
+    </div>
+
+    <div class="container">
+        
+        <!-- MEDICAMENTOS -->
+        <section class="categoria">
+            <h2>💊 Medicamentos</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="produto">Hystin</div>
+                    <div class="preco">R$ 6,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Hystin - Valor: R$ 6,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Nimesulida</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Nimesulida - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 DESTAQUE</div>
+                    <div class="produto">Fenaflan Gel Alívio da Dor</div>
+                    <div class="preco">R$ 17,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Fenaflan Gel Alívio da Dor - Valor: R$ 17,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Loratadina</div>
+                    <div class="preco">R$ 6,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Loratadina - Valor: R$ 6,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Dipirona 1g</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Dipirona 1g - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Dipirona Gotas</div>
+                    <div class="preco">R$ 4,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Dipirona Gotas - Valor: R$ 4,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Ivermectina (4 comp.)</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Ivermectina (4 comp.) - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Losartana 50mg (4 caixas)</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Losartana 50mg (4 caixas) - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Tadalafila 20mg (4 comp.)</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Tadalafila 20mg (4 comp.) - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Simeticona 125mg</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Simeticona 125mg - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Doralgina (20 comp.)</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Doralgina (20 comp.) - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Pastilha Endcof</div>
+                    <div class="preco">R$ 24,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Pastilha Endcof - Valor: R$ 24,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 DESTAQUE</div>
+                    <div class="produto">Soro de Reidratação (4 sachês)</div>
+                    <div class="preco">R$ 24,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Soro de Reidratação (4 sachês) - Valor: R$ 24,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 KIT ESPECIAL</div>
+                    <div class="produto">KIT XÔ GRIPE (Cimegripe + Vitamina C)</div>
+                    <div class="preco">R$ 24,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: KIT XÔ GRIPE - Valor: R$ 24,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VITAMINAS & IMUNIDADE -->
+        <section class="categoria">
+            <h2>🍊 Vitaminas & Imunidade</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="produto">Vitamina C</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Vitamina C - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Vitamina B12 (mastigável)</div>
+                    <div class="preco">R$ 39,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Vitamina B12 (mastigável) - Valor: R$ 39,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Xarope com Vitamina C</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Xarope com Vitamina C - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Vitamina C + Zinco</div>
+                    <div class="preco">R$ 29,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Vitamina C + Zinco - Valor: R$ 29,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">CentroPlus Vitamina C</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: CentroPlus Vitamina C - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Fort Gerin A-Z</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Fort Gerin A-Z - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Fort Gerin Cabelos/Pele/Unhas</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Fort Gerin Cabelos/Pele/Unhas - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Cártamo</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Cártamo - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Composto Circulatório</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Composto Circulatório - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NATURAIS & BEM-ESTAR -->
+        <section class="categoria">
+            <h2>🌿 Naturais & Bem-Estar</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="produto">Óleo de Açafrão</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Óleo de Açafrão - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Castanha-da-Índia</div>
+                    <div class="preco">R$ 39,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Castanha-da-Índia - Valor: R$ 39,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Vinagre de Maçã</div>
+                    <div class="preco">R$ 31,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Vinagre de Maçã - Valor: R$ 31,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Pomada Canela-de-Velho</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Pomada Canela-de-Velho - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Florais Thérapi</div>
+                    <div class="preco">R$ 19,90</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Florais Thérapi - Valor: R$ 19,90" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Gel Massageador CBA</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Gel Massageador CBA - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFANTIL & FAMÍLIA -->
+        <section class="categoria">
+            <h2>👶 Infantil & Família</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="produto">Multivitamínico Kids</div>
+                    <div class="preco">R$ 29,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Multivitamínico Kids - Valor: R$ 29,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Leite Ninho</div>
+                    <div class="preco">R$ 23,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Leite Ninho - Valor: R$ 23,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Cotonete</div>
+                    <div class="preco">R$ 3,49</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Cotonete - Valor: R$ 3,49" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Lenço Umedecido</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Lenço Umedecido - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 SUCESSO</div>
+                    <div class="produto">Bebê Limpinho (140 un.)</div>
+                    <div class="preco">R$ 10,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Bebê Limpinho (140 un.) - Valor: R$ 10,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 INFANTIL</div>
+                    <div class="produto">Band-Aid Minions</div>
+                    <div class="preco">R$ 6,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Band-Aid Minions - Valor: R$ 6,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUIDADOS PESSOAIS -->
+        <section class="categoria">
+            <h2>🤰 Cuidados Pessoais</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="produto">Teste de Gravidez</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Teste de Gravidez - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Pílula do Dia Seguinte</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Pílula do Dia Seguinte - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Gel Lubrificante</div>
+                    <div class="preco">R$ 11,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Gel Lubrificante - Valor: R$ 11,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGIENE & OUTROS -->
+        <section class="categoria">
+            <h2>🧴 Higiene & Outros</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="produto">Antisséptico Bucal</div>
+                    <div class="preco">R$ 12,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Antisséptico Bucal - Valor: R$ 12,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 DESTAQUE</div>
+                    <div class="produto">Spray Antisséptico</div>
+                    <div class="preco">R$ 34,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Spray Antisséptico - Valor: R$ 34,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 OFERTA</div>
+                    <div class="produto">Colgate 500ml</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Colgate 500ml - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 OFERTA</div>
+                    <div class="produto">Listerine 500ml</div>
+                    <div class="preco">R$ 24,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Listerine 500ml - Valor: R$ 24,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 OFERTA</div>
+                    <div class="produto">Carmed 250ml</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Carmed 250ml - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 OFERTA</div>
+                    <div class="produto">Renu 475ml</div>
+                    <div class="preco">R$ 49,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Renu 475ml - Valor: R$ 49,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Colírio Geolab</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Colírio Geolab - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 OFERTA</div>
+                    <div class="produto">Colírio Legrand</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Colírio Legrand - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="produto">Creme Skala 1kg</div>
+                    <div class="preco">R$ 9,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Creme Skala 1kg - Valor: R$ 9,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 OFERTA</div>
+                    <div class="produto">Ceras Modeladoras</div>
+                    <div class="preco">R$ 14,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Ceras Modeladoras - Valor: R$ 14,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 PREÇO BAIXO</div>
+                    <div class="produto">Prestobarba Comfort</div>
+                    <div class="preco">R$ 2,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Prestobarba Comfort - Valor: R$ 2,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- XAROPES -->
+        <section class="categoria">
+            <h2>💊 Xaropes</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="destaque-fogo">🔥 DESTAQUE</div>
+                    <div class="produto">Xarope de Guaco</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Xarope de Guaco - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+                <div class="card">
+                    <div class="destaque-fogo">🔥 DESTAQUE</div>
+                    <div class="produto">Xarope de Ambroxol</div>
+                    <div class="preco">R$ 19,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Xarope de Ambroxol - Valor: R$ 19,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTES -->
+        <section class="categoria">
+            <h2>🧪 Testes</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="destaque-fogo">🔥 TESTE RÁPIDO</div>
+                    <div class="produto">Autoteste de COVID</div>
+                    <div class="preco">R$ 29,99</div>
+                    <a class="btn-zap" href="https://wa.me/?text=Olá! Quero pedir o produto: Autoteste de COVID - Valor: R$ 29,99" target="_blank">Pedir no Zap 🛒</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FERRAMENTAS E LINKS ÚTEIS -->
+        <section class="categoria">
+            <h2>🌐 Nossos Canais e Ferramentas</h2>
+            <div class="links-uteis">
+                <a class="btn-link" href="https://whatsapp.com/channel/0029VbCNcI32f3EG9LzfoK3d" target="_blank">📱 Entrar no Canal de Ofertas</a>
+                <a class="btn-link" href="https://atacadaofarma.base44.app/" target="_blank">🛍️ Acessar APP Online</a>
+                <a class="btn-link" href="https://atacadaofarmacentro.github.io/Peso-Certo-IMC/" target="_blank">🌐 Calculadora de IMC</a>
+                <a class="btn-link" href="https://atacadaofarmacentro.github.io/MamaeAtacadoaFarmacentro/" target="_blank">🤰 Guia da Mamãe</a>
+                <a class="btn-link" href="https://atacadaofarmacentro.github.io/Blog_AtacadaoFarmaCentro/#cannabis-opioides" target="_blank">🌐 Acessar Nosso Blog</a>
+            </div>
+        </section>
+
+    </div>
+
     <footer>
-        <p>📍 Atacadão Farma Centro</p>
-        <p>💙 Cuidando da saúde da sua família!</p>
+        <h3>Atacadão Farma Centro</h3>
+        <p>💙 Cuidando da saúde da sua família e do seu bolso!</p>
     </footer>
+
 </body>
 </html>
